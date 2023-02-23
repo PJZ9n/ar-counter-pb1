@@ -1,0 +1,37 @@
+<ul>
+  <li>Total count: <%= Post.all.size %></li>
+  <li>Published count: <%= Post.published.size %></li>
+  <li>Featured count: <%= Post.featured.size %></li>
+  <li>Published and featured count: <%= Post.published.featured.size %></li>
+</ul>
+
+<div style="margin-top: 30px; margin-bottom: 30px">
+  <h2>New post</h2>
+  <%= form_with model: @post do |form| %>
+    <%= form.label :content %><br>
+    <%= form.text_field :content %><br>
+
+    <%= form.label :published %><br>
+    <%= form.check_box :published %><br>
+
+    <%= form.label :featured %><br>
+    <%= form.check_box :featured %><br>
+
+    <%= form.submit %>
+  <% end %>
+</div>
+
+<%= paginate @posts %>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Content</th>
+      <th scope="col">Published</th>
+      <th scope="col">Featured</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @posts %>
+  </tbody>
+</table>

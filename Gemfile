@@ -62,6 +62,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem "spicy_validation", "~> 0.1.1"
 end
 
 group :test do
@@ -70,3 +72,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "faker", "~> 3.1"
+
+gem "kaminari", "~> 1.2"
